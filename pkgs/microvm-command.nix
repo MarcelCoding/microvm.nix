@@ -102,10 +102,6 @@ writeShellScriptBin "microvm" ''
       build "$NAME"
 
       popd > /dev/null
-      if [ -e "$DIR" ]; then
-        echo "$DIR already exists."
-        exit 1
-      fi
       mv "$TEMP" "$DIR"
       chown :kvm -R "$DIR"
       chmod -R a+rX "$DIR"
